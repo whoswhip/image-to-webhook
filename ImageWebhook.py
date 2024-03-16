@@ -4,8 +4,9 @@ import tkinter as tk
 from tkinter import filedialog
 
 def send_images_to_discord(webhook_url, folder_path):
+    valid_extensions = (".jpg", ".jpeg", ".png", ".gif")  # Add or remove any unwanted extensions
     for filename in os.listdir(folder_path):
-        if filename.endswith(".jpg") or filename.endswith(".png"):  # Change file extensions as needed
+        if filename.lower().endswith(valid_extensions):  
             file_path = os.path.join(folder_path, filename)
             with open(file_path, "rb") as file:
                 files = {"file": file}
@@ -21,10 +22,7 @@ def select_folder():
 
 if __name__ == "__main__":
     webhook_url = input("Enter the Discord webhook URL: ")
-    print("Set folder directory: ")
     folder_path = select_folder()
-    print(f"Folder path set to {folder_path}")
-    print("---------------------------------")
 
     if folder_path:
         print("Sending images to Discord...")
