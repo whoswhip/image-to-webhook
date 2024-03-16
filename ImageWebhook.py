@@ -14,7 +14,7 @@ def send_images_to_discord(webhook_url, folder_path):
 
 def select_folder():
     root = tk.Tk()
-    root.withdraw()  # Hide the main window
+    root.withdraw() 
 
     folder_path = filedialog.askdirectory()
     return folder_path
