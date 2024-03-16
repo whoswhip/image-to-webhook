@@ -28,8 +28,17 @@ def select_folder():
     return folder_path
 
 if __name__ == "__main__":
+    print("\033[94m" + 
+  """  ___ __  __   _   ___ ___   _____ ___   __      _____ ___ _  _  ___   ___  _  __
+ |_ _|  \/  | /_\ / __| __| |_   _/ _ \  \ \    / / __| _ ) || |/ _ \ / _ \| |/ /
+  | || |\/| |/ _ \ (_ | _|    | || (_) |  \ \/\/ /| _|| _ \ __ | (_) | (_) | ' < 
+ |___|_|  |_/_/ \_\___|___|   |_| \___/    \_/\_/ |___|___/_||_|\___/ \___/|_|\_\ """, "\033[0m")
+    print("---------------------------------------------------------------------------------")
     webhook_url = input("Enter the Discord webhook URL: ")
+    print("Select file directory: ")
     folder_path = select_folder()
+    print(f"Directory: {folder_path}")
+    print("---------------------------------------------------------------------------------")
 
     if folder_path:
         print("Sending images to Discord...")
